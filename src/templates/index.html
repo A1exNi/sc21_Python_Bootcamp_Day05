@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block body %}
+    <title>SoundsStore</title>
+    <h3>Sounds:</h3>
+    <ul>
+        {% for i, j in pair %}
+            <h4>{{ i }}</h4>
+            <audio src={{ j }} controls></audio>
+        {% endfor %}
+    </ul>
+    <h3>Upload new sound:</h3>
+    <form enctype="multipart/form-data" method="post">
+        <p><input type="file" name="file">
+        <input type="submit" value="Send"></p>
+    </form>
+{% endblock %}
